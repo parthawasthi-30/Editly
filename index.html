@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Editly - Image Editor</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assests/editly.png" alt="Editly Logo" />
+        <span>Editly</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" class="active">
+          <i class="ri-edit-2-line"></i>
+          Editor
+        </a>
+
+        <a href="#">
+          <i class="ri-information-line"></i>
+          About
+        </a>
+      </div>
+    </nav>
+
+    <main class="studio">
+      <section class="workspace">
+        <header class="toolbar">
+          <label for="image-input" class="btn btn-primary">
+            <i class="ri-upload-2-line"></i>
+            <span>Upload Here</span>
+
+            <input type="file" id="image-input" accept="image/*" hidden />
+          </label>
+
+          <button class="btn btn-secondary" id="reset-btn" disabled>
+            <i class="ri-restart-line"></i>
+            Reset
+          </button>
+
+          <button class="btn btn-accent" id="download-btn" disabled>
+            <i class="ri-download-2-line"></i>
+            Download Now
+          </button>
+        </header>
+
+        <div class="viewport" id="drop-zone">
+          <div class="placeholder" id="placeholder">
+            <i class="ri-image-add-line"></i>
+
+            <p class="placeholder-title">No image selected</p>
+
+            <span class="placeholder-sub">
+              Drag and drop an image here, or use the upload button
+            </span>
+          </div>
+
+          <canvas id="image-canvas"></canvas>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-section">
+          <h2 class="panel-title">Presets</h2>
+
+          <div class="presets-grid" id="presets-container"></div>
+        </div>
+
+        <div class="panel-section">
+          <div class="panel-header">
+            <h2 class="panel-title">Adjustments</h2>
+          </div>
+
+          <div class="filters-list" id="filters-container"></div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
